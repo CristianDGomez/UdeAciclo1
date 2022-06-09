@@ -1,0 +1,49 @@
+def encriptar_caracter(caracter, b):
+    lista = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "Ñ", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+    caracter_encriptado = ""
+    for letra in caracter:
+        if letra in lista:
+            a = lista.index(letra)
+            cesar = (a + b)%27
+            caracter_encriptado += lista[cesar]
+        else:
+            caracter_encriptado += letra        
+    return caracter_encriptado
+
+def encriptar(mensaje, b):
+    lista = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "Ñ", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+    mensaje_encriptado = ""
+    for letra in mensaje:
+        if letra in lista:
+            a = lista.index(letra)
+            cesar = (a + b)%27
+            mensaje_encriptado += lista[cesar]
+        else:
+            mensaje_encriptado += letra
+    return mensaje_encriptado
+    
+def desencriptar_caracter(caracter_encriptado, b):
+    lista = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "Ñ", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+    caracter_desencriptado = ""
+    for letra in caracter_encriptado:
+        if letra in lista:
+            a = lista.index(letra)
+            cesar = (a - b)%27
+            caracter_desencriptado += lista[cesar]
+        else:
+            caracter_desencriptado += letra    
+
+    return caracter_desencriptado
+    
+def desencriptar(mensaje_encriptado, b):
+    lista = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "Ñ", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+    mensaje_desencriptado = ""
+    for letra in mensaje_encriptado:
+        if letra in lista:
+            a = lista.index(letra)
+            cesar = int(a - b)%27
+            mensaje_desencriptado += lista[cesar]
+        else:
+            mensaje_desencriptado += letra
+            
+    return mensaje_desencriptado
