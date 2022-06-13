@@ -1,0 +1,32 @@
+import random
+
+def generar_barajas(tipos_cartas, n_palos):
+    m = []
+		cartas_barajadas = []
+		random.seed()
+		for i in range(n_palos):
+				a = random.sample(tipos_cartas, len(tipos_cartas))
+				m.append(a)
+		cartas_barajadas.append(m)
+		
+		lista =cartas_barajadas
+		if type(lista) is list:
+				listadicional = []
+				for k in lista:
+						if type(k) is list:
+								for x in k:
+										if type(x) is int or type(x) is str:
+												listadicional.append(x)
+										if type(x) is list:
+												for b in x:
+														listadicional.append(b)
+						else:
+								listadicional.append(k)
+						lista = listadicional
+						retorno = lista
+		cartas_barajadas = retorno
+		cartas_barajadas = tuple(cartas_barajadas)
+		
+		return cartas_barajadas
+		
+print(generar_barajas(['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K'],4))
